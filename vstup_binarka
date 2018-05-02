@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace projekt
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+            Console.WriteLine("Zadejte číslo v desítkové soustavě:");
+            int cislo = int.Parse(Console.ReadLine());
+            int cislo_2;
+            int bin = cislo;
+            string vysledek = string.Empty;
+            while (bin > 0)
+            {
+                cislo_2 = bin % 2;
+                bin /= 2;
+                vysledek = cislo_2.ToString() + vysledek;
+            }
+        }
+    }
+}
