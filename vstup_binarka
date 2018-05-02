@@ -22,6 +22,7 @@ namespace projekt
                 cislo_2 = bin % 2;
                 bin /= 2;
                 vysledek = cislo_2.ToString() + vysledek;
+                Console.ReadLine();
             }
         }
     }
