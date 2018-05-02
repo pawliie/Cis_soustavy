@@ -10,8 +10,6 @@ namespace projekt
     {
         static void Main(string[] args)
         {
-
-
             Console.WriteLine("Zadejte číslo v desítkové soustavě:");
             int cislo = int.Parse(Console.ReadLine());
             int cislo_2;
@@ -24,8 +22,7 @@ namespace projekt
                 vysledek = cislo_2.ToString() + vysledek;
             }
             Console.WriteLine("Binární: {0}", vysledek);
-                Console.ReadLine();
-            }
+            Console.ReadLine();
         }
     }
 }
