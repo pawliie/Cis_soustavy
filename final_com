@@ -1,0 +1,74 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace projekt
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Zadejte číslo v desítkové soustavě:");
+            int cislo = int.Parse(Console.ReadLine()); //Převod stringu na int
+                int hexa = cislo; //proměnná 
+                int oct = cislo; //proměnná 
+                 string octal = ""; //proměnná 
+                  int cislo_2; //proměnná 
+                  int bin = cislo; //proměnná 
+              string vysledek = string.Empty; 
+                while (bin > 0)  // cyklus který počítá binární číslo
+                {
+                    cislo_2 = bin % 2;
+                    bin /= 2;
+                    vysledek = cislo_2.ToString() + vysledek;
+                }
+                Console.WriteLine("Binární: {0}", vysledek); //výstup s binárním číslem
+                string hex = ""; //proměnná hex
+                while (true) //cyklus na počítání hexadecimálního čísla
+                {
+                    if ((hexa % 16) != 0) //podmínka pro další výpočet
+                    {
+                        if ((hexa % 16) > 9) // podmínka, jestli písmeno nebo číslo
+                            switch (hexa % 16)
+                            {
+                                case 10: //pokud výsledek po podmínce je větší jak 9, tak to doplní písmeno z následujících
+                                    hex = "A" + hex;
+                                    break;
+                                case 11:
+                                    hex = "B" + hex;
+                                    break;
+                                case 12:
+                                    hex = "C" + hex;
+                                    break;
+                                case 13:
+                                    hex = "D" + hex;
+                                    break;
+                                case 14:
+                                    hex = "E" + hex;
+                                    break;
+                                case 15:
+                                    hex = "F" + hex;
+                                    break;
+                            }
+                        else
+                            hex = (hexa % 16).ToString() + hex; //pokud výsledek byl menší jak 10, číslo se převede na string a zapíše se do proměnné hex
+                    }
+                    else
+                        hex = hex;
+                    hexa /= 16;
+                    if (hexa <= 0)
+                        break;
+                }
+                Console.WriteLine("Hexadecimální " + hex); //výstup hexadecimálního čísla
+                while (oct != 0) //cyklus pro výpočet osmičkové soustavy
+                {
+                    octal = (oct % 8) + octal; //zbytek po dělení se přidá do proměnné octal
+                    oct /= 8;
+                }
+                Console.WriteLine("Oktálová: " + octal); //výstup osmičkové soustavy
+                Console.ReadLine(); //zastavení konzole (možnost si přečíst výsledky)
+                }
+            }
+        }
